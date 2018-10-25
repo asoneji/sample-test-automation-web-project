@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Sample Test Automation</title>
+   <style>
+   input#sendMessageTextField {
+      background-color: #9dfe4e;
+   }
+   input#receivedMessageTextField {
+      background-color: #939393;
+   }
+   </style>
+</head>
+
+<body>
+   <h1 align="center" id="sampleTestAutomationLabel">Sample Test Automation<h1>
+      <table align="center">
+        <tr>
+          <th id="sendMessageLabel">Message:</th>
+          <th><input id="sendMessageTextField" type='text' /></th>
+        </tr>
+        <tr>
+          <td><button onclick="sendMessageButtonClicked()" id="sendMessageButton" type="button">Send</button></td>
+          <td><button onclick="clearMessageButtonClicked()" id="clearMessageButton" type="button">Clear</button></td>
+        </tr>
+        <tr>
+           <th id="receivedMessageLabel">Received:</th>
+          <th><input background-color=#3CBC8D; id="receivedMessageTextField" type='text' disabled /></th>
+        </tr>
+      </table>
+
+      <script>
+      function sendMessageButtonClicked() {
+          document.getElementById("receivedMessageTextField").value = document.getElementById("sendMessageTextField").value;
+      }
+      function clearMessageButtonClicked() {
+          document.getElementById("sendMessageTextField").value = ""
+          document.getElementById("receivedMessageTextField").value = "";
+      }
+      </script>
+</body>
+
+</html>
